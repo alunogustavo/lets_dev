@@ -13,6 +13,7 @@
     "init:dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --exit-child --respawn ."
   },
   "dependencies": {
+    "@prisma/client": "^4.1.0",
     "@types/typescript": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
