@@ -4,7 +4,7 @@ import { hash } from "bcrypt"
 
 type CreateUserDTO = {
     userData: UserEntity
-}
+} 
 
 
 class CreateUserService{

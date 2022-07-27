@@ -11,7 +11,9 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
+  id String @id @default(uuid()) //universal unique identifier
+  Tokens Tokens? 
+  token Tokens
 
   name String
   email String @unique
@@ -24,6 +26,19 @@ model User {
   updated_at DateTime @updatedAt
 
   @@map("user")
+}
+
+model Tokens{
+  id String @id @default(uuid())
+  user User @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId String @unique
+
+  token String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("tokens")
 }
 
 
