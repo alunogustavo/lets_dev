@@ -6,18 +6,10 @@ class UserEntity implements User {
     email: string;
     password: string;
     birthDate: string;
-    cellNumber: number;
+    cellNumber: string;
     readonly created_at: Date;
     readonly updated_at: Date;
     
 }
 
 export { UserEntity }
-
- /*
-  * Servidor
-  * Controladores
-  * Serviços
-  * Prisma
-  * Banco de Dados
-  */

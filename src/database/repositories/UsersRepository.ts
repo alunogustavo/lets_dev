@@ -1,12 +1,12 @@
-import { prisma } from "../../../prisma/PrismaClient"
-import { UserEntity } from "../entities/UserEntity"
+import { prisma } from "../../../prisma/PrismaClient";
+import { UserEntity } from "../entities/UserEntity";
 
 type CreateUserDTO = {
-    userData: UserEntity
+    userData: UserEntity;
 }
 
 type findByEmailDTO = {
-    email: string
+    email: string;
 }
 
 class UsersRepository {
@@ -17,7 +17,7 @@ class UsersRepository {
             }
         })
 
-        return newUser
+        return newUser;
     };
 
     async findByEmail({ email }: findByEmailDTO): Promise<UserEntity> {

@@ -1,1 +1,0 @@
-class TokenEntity implements Token
