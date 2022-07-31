@@ -38,4 +38,3 @@ class CreateUserService{
 }
 
 export { CreateUserService }
-

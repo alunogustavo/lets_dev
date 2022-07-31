@@ -17,7 +17,7 @@ model User {
   email String @unique
   password String
 
-  birthDate String?
+  birthDate DateTime?
   cellNumber String? @unique
 
   created_at DateTime @default(now())

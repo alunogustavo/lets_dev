@@ -9,6 +9,15 @@ type findByEmailDTO = {
     email: string;
 }
 
+type FindByIdDTO ={
+    id: string;
+}
+
+type UpdateUserDTO ={
+    id: string;
+    userData: Partial<UserEntity>;
+}
+
 class UsersRepository {
     async create({ userData }: CreateUserDTO) {
         const newUser = await prisma.user.create({
@@ -28,6 +37,27 @@ class UsersRepository {
         });
 
         return userFound;
+    }
+
+    async findById({ id }: FindByIdDTO): Promise<UserEntity> {
+        const userFound = await prisma.user.findFirst({
+            where: {
+                id
+            }
+        })
+
+        return userFound;
+    }
+
+    async update ({ id, userData }: UpdateUserDTO): Promise<UserEntity> {
+        const updateUser = await prisma.user.update({
+            where: {
+                id
+            },
+            data: userData
+        })
+
+        return updateUser
     }
 }
 
