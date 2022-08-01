@@ -6,25 +6,22 @@ generator client {
 }
 
 datasource db {
-  provider ="sqlite"
+  provider = "sqlite"
   url      = "file:./database.sqlite"
 }
 
 model User {
   id String @id @default(uuid()) //universal unique identifier
 
-  name String
-  email String @unique
+  name     String
+  email    String @unique
   password String
 
-  birthDate DateTime?
-  cellNumber String? @unique
+  birthDate  DateTime?
+  cellNumber String?   @unique
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
   @@map("user")
 }
-
-
-
