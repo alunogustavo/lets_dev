@@ -15,7 +15,7 @@ class ReadProfileService {
             throw new AppError("User not Found!", 404);
         }
 
-        return userAlreadyExists;
+        return userAlreadyExists;   
     }
 }
 

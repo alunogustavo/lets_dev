@@ -1,6 +1,7 @@
 import { User } from "@prisma/client";
 
 class UserEntity implements User {
+  idAdmin: boolean;
   readonly id: string;
   name: string;
   email: string;
@@ -11,4 +12,4 @@ class UserEntity implements User {
   readonly updated_at: Date;
 }
 
-export { UserEntity };
+export { UserEntity }

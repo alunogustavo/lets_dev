@@ -6,7 +6,7 @@ import { AppError } from "../shared/errors";
 type TCreateUser = {
   userData: UserEntity;
 };
-
+                 
 class CreateUserService {
   async execute({ userData }: TCreateUser): Promise<UserEntity> {
     const { email, password } = userData;
@@ -35,7 +35,6 @@ class CreateUserService {
         400
       );
     }
-
     return newUser;
   }
 }
